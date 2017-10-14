@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="./favicon.ico">
+
+    <title>CSE 445 Barrett Honors Project</title>
+
+    <!-- Main JS loaded here, needs to load first -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./js/service.js" type="text/javascript"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="jumbotron.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">Brendan Koehler</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-3">Google Web Service</h1>
+        <p>
+          This project was developed as an addition the the CSE 445 class at ASU for honors credit.
+          The requirements of the project are:
+          <ul>
+            <li>
+              To write a SOAP service for accessing the google api to get the distance and drive time between 2 cities, 
+              using the service at:
+              <a href="https://developers.google.com/maps/documentation/distancematrix/" target="_blank">
+                https://developers.google.com/maps/documentation/distancematrix/</a>.
+            </li>
+            <li>
+              Host this service and write a web application that can consume and run tests on the service.
+            </li>
+            <li>
+              Additionally create and consume one more service that is based off the api located at: 
+              <a href="https://developers.google.com/maps/documentation/webservices/" target="_blank">
+                https://developers.google.com/maps/documentation/webservices/</a>.
+            </li>
+          </ul>
+        </p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">View Code &raquo;</a></p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Input</h2>
+           <div class="form-group">
+            <form>
+              City One: <br>
+              <input class="form-control" type="text" id="cityOne" name="city_one" placeholder="SanFrancisco"/><br>
+              City Two: <br>
+              <input class="form-control" type="text" id="cityTwo" name="city_two" placeholder="Phoenix"/><br>
+              <input type="button" class="btn btn-primary" value="Get Distance/Drive Time" id="citySubmit" name="city_submit" onclick="sendCities()"/>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h2>Output</h2>
+          <p>Distance between cities: </p>
+          <p id="distanceBCOutput">&nbsp;</p>
+          <p>Drive time between cities: </p>
+          <p id="driveTimeOutput">&nbsp;</p>
+        </div>
+        <div class="col-md-4">
+          <h2>Additional Service</h2>
+          <p></p>
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; Brendan Koehler 2017</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+    <script src="./assets/js/vendor/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
