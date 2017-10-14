@@ -16,7 +16,7 @@
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
+    <!-- Custom styles -->
     <link href="jumbotron.css" rel="stylesheet">
   </head>
 
@@ -36,8 +36,6 @@
         </ul>
       </div>
     </nav>
-
-    <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
         <h1 class="display-3">Google Web Service</h1>
@@ -61,12 +59,11 @@
             </li>
           </ul>
         </p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">View Code &raquo;</a></p>
+        <p><a class="btn btn-primary btn-lg" href="https://github.com/bjkoehle/445HonorsProject" role="button">View Code &raquo;</a></p>
       </div>
     </div>
 
     <div class="container">
-      <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-4">
           <h2>Input</h2>
@@ -88,8 +85,18 @@
           <p id="driveTimeOutput">&nbsp;</p>
         </div>
         <div class="col-md-4">
-          <h2>Additional Service</h2>
-          <p></p>
+          <h2>Elevation Service</h2>
+            <div class="form-group">
+                <form>
+                    <label>Enter your Latitude:</label>
+                    <input class="form-control" type="text" id="latitude" name="_lat" placeholder="33.4484"/><br />
+                    <label>Enter your Longitude:</label>
+                    <input class="form-control" type="text" id="longitude" name="_lon" placeholder="112.0740" /><br />
+                    <input class="btn btn-primary" type="button" value="Get City Elevation" id="elevationSubmit" name="elev_submit" onclick="sendElevation()"/><br/>
+                </form>
+            </div>
+          <p>Elevation:</p>
+          <p id="elevationOutput">&nbsp;</p>
         </div>
       </div>
 
@@ -104,7 +111,6 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    
     <script src="./assets/js/vendor/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->

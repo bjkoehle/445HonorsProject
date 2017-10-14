@@ -6,6 +6,7 @@ function sendCities(){
     var city1 = document.getElementById("cityOne").value;
     var city2 = document.getElementById("cityTwo").value;
 
+    //Service requests
     //Make the request for the distance.
     $.ajax({
         type: "POST",
@@ -18,6 +19,9 @@ function sendCities(){
         {
             //Set our output in the page
             document.getElementById("distanceBCOutput").innerHTML = String(data.d) + " Km";
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            alert(errorThrown);
         }
     });
 
@@ -32,8 +36,33 @@ function sendCities(){
         success: function (data) {
             //Set our output in the page
             document.getElementById("driveTimeOutput").innerHTML = data.d;
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            alert(errorThrown);
         }
     });
 
     
+}
+
+function sendElevation() {
+    var lat = document.getElementById("latitude").value;
+    var lon = document.getElementById("longitude").value;
+
+    //Make the request for the elevation to the service
+    $.ajax({
+        type: "POST",
+        url: "../Service2.svc/GetElevation",
+        data: '{"Lat":"' + String(lat) + '", "Lon":"' + String(lon) + '"}',
+        processData: false,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (data) {
+            //Set our output in the page
+            document.getElementById("elevationOutput").innerHTML = String(data.d) + " meters";
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            alert(errorThrown);
+        }
+    });
 }
